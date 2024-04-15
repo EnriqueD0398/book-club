@@ -24,3 +24,8 @@ module.exports.doRegister = (req, res, next) => {
       }
     })
 }
+
+// Perfil del usuario en sesión
+module.exports.getCurrentUserProfile = (req, res, next) => {
+  res.render('profile');
+}
