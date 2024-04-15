@@ -30,5 +30,7 @@ module.exports.getCurrentCurrentUser = (req, res, next) => {
         next();
       })
       .catch(err => next(err))
+  } else {
+    next()
   }
 } 
