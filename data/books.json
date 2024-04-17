@@ -16,6 +16,14 @@
     "genres": ["Aventuras", "Fantasía"]
   },
   {
+    "title": "Harry Potter y la Cámara Secreta",
+    "description": "Es el segundo libro de la serie literaria Harry Potter, escrito por la autora británica J. K. Rowling en 1998.",
+    "pages": 251,
+    "author": "JK Rowling",
+    "publicationYear": 1998,
+    "genres": ["Aventuras", "Fantasía"]
+  },
+  {
     "title": "Drácula",
     "description": "es una novela de fantasía gótica escrita por Bram Stoker, publicada en 1897. Publicada en castellano por Ediciones Hymsa bajo la colección La novela aventura en 1935, con portada de Juan Pablo Bocquet e ilustraciones de Femenía.",
     "pages": 419,

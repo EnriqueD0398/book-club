@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const { REQUIRED_FIELD_ERROR } = require('../constants/errorMessages');
 
 const genres = require('../constants/genres');
+const Author = require('./Author.model');
 
 const bookSchema = (
   {
@@ -19,7 +20,8 @@ const bookSchema = (
       required: [true, REQUIRED_FIELD_ERROR]
     },
     author: {
-      type: String,
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: Author.modelName,
       required: [true, REQUIRED_FIELD_ERROR]
     },
     publicationYear: {

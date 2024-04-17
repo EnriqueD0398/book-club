@@ -1,0 +1,46 @@
+[
+  {
+    "name": "JK Rowling",
+    "books": [
+      {
+        "title": "Harry Potter y la Piedra Filosofal",
+        "description": "Es el primer libro de la serie literaria Harry Potter, escrito por la autora británica J. K. Rowling en 1997, que supuso además el debut de Rowling como escritora profesional.",
+        "pages": 223,
+        "publicationYear": 1997,
+        "genres": ["Aventuras", "Fantasía"]
+      },
+      {
+        "title": "Harry Potter y la Cámara Secreta",
+        "description": "Es el segundo libro de la serie literaria Harry Potter, escrito por la autora británica J. K. Rowling en 1998.",
+        "pages": 251,
+        "publicationYear": 1998,
+        "genres": ["Aventuras", "Fantasía"]
+      }
+    ]
+  },
+  {
+    "name": "Patrick Rothfuss",
+    "books": [
+      {
+        "title": "El nombre del viento. Crónica del asesino de reyes",
+        "description": "Es una novela de fantasía épica, perteneciente a la serie Crónica del Asesino de Reyes, escrita por Patrick Rothfuss, escritor estadounidense y profesor adjunto de lengua y filología inglesa en la Universidad de Wisconsin. Se publicó por primera vez en Estados Unidos en el 2007, y en España en mayo del 2009. Ha vendido más de 800.000 copias.",
+        "pages": 613,
+        "publicationYear": 2007,
+        "genres": ["Aventuras", "Fantasía"]
+      }
+    ]
+  },
+  {
+    "name": "Bram Stoker",
+    "books": [
+      {
+        "title": "Drácula",
+        "description": "es una novela de fantasía gótica escrita por Bram Stoker, publicada en 1897. Publicada en castellano por Ediciones Hymsa bajo la colección La novela aventura en 1935, con portada de Juan Pablo Bocquet e ilustraciones de Femenía.",
+        "pages": 419,
+        "author": "Bram Stoker",
+        "publicationYear": 1897,
+        "genres": ["Terror", "Fantasía", "Thriller"]
+      }
+    ]
+  }
+]

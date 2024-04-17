@@ -3,6 +3,7 @@ const router = require('express').Router();
 const usersController = require('../controllers/users.controller');
 const authController = require('../controllers/auth.controller');
 const booksController = require('../controllers/books.controller');
+const likesController = require('../controllers/likes.controller');
 
 const authMiddleware = require('../middlewares/auth.middleware');
 
@@ -22,5 +23,9 @@ router.get('/logout', authMiddleware.isAuthenticated, authController.logout);
 
 router.get('/books', booksController.getBooks);
 router.get('/books/:id', booksController.getBook);
+
+// Likes
+
+router.post('/books/:id/like', likesController.doLike);
 
 module.exports = router;
