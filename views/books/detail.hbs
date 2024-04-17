@@ -1,0 +1,19 @@
+<div class="container my-3">
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+      <img class="img-fluid w-100" src="https://placehold.co/400x500" alt="">
+    </div>
+    <div class="col">
+      <h1>{{book.title}}</h1>
+      <h3>{{book.author}}</h3>
+      <p>{{book.description}}</p>
+      <p><strong>Páginas:</strong> {{book.pages}}</p>
+      <p><strong>Año de publicación:</strong> {{book.publicationYear}}</p>
+      <p><strong>Géneros:</strong>
+        {{#each book.genres as |genre|}}
+          <a href="/books?genres={{genre}}" class="badge text-bg-secondary me-2">{{genre}}</a>
+        {{/each}}
+      </p>
+    </div>
+  </div>
+</div>

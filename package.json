@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js -e js,hbs",
-    "start": "node app.js"
+    "start": "node app.js",
+    "seeds": "node ./bin/seeds.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "hbs": "^4.2.0",
+    "http-errors": "^2.0.0",
     "mongoose": "^8.3.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0"
