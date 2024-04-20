@@ -7,10 +7,12 @@ const likesController = require('../controllers/likes.controller');
 
 const authMiddleware = require('../middlewares/auth.middleware');
 
+const upload = require('./storage.config');
+
 router.get('/', (req, res, next) => res.render('home'))
 
 router.get('/register', authMiddleware.isNotAuthenticated, usersController.register);
-router.post('/register', authMiddleware.isNotAuthenticated, usersController.doRegister);
+router.post('/register', authMiddleware.isNotAuthenticated, upload.single('avatar'), usersController.doRegister);
 
 router.get('/login', authMiddleware.isNotAuthenticated, authController.login);
 router.post('/login', authMiddleware.isNotAuthenticated, authController.doLogin);

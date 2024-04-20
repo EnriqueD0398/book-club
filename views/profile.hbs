@@ -1,11 +1,24 @@
-<div class="container">
-  <h1>{{currentUser.username}}</h1>
+<div class="container mt-3">
+  <div class="d-flex flex-column text-center align-items-center gap-2">
+    <img class="rounded-circle border" src="{{currentUser.avatar}}" width="100" />
+    <div>
+      <h4>{{currentUser.username}}</h4>
+      <p>{{currentUser.email}}</p>
+    </div>
+  </div>
+
+  <h2 class="mt-4">Mis libros favoritos</h2>
+  {{#if books}}
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    {{#each currentUser.likes as  |like|}}
+    {{#each books as |book|}}
       <div class="col">
-        {{> bookcard book=like.book}}
+        {{> bookcard book=book}}
       </div>
     {{/each}}
   </div>
+
+  {{else}}
+    <p>No tienes libros favoritos aun. Visita <a href="/books">nuestro listado</a> para ver si alguno te gusta.</p>
+  {{/if}}
 </div>

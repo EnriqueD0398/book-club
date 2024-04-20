@@ -22,6 +22,11 @@ const userSchema = mongoose.Schema(
       unique: true,
       match: [EMAIL_REGEX, "Introduce un email válido"]
     },
+    avatar: {
+      type: String,
+      // required: [true, REQUIRED_FIELD_ERROR],
+      default: 'https://res.cloudinary.com/plasoironhack/image/upload/v1713603564/ironhack/book-club/ywkmjbnwfy1vdhta1qwd.png'
+    },
     password: {
       type: String,
       required: [true, REQUIRED_FIELD_ERROR],

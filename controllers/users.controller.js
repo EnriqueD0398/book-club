@@ -13,7 +13,7 @@ module.exports.doRegister = (req, res, next) => {
     res.render('register', { errors, values })
   }
 
-  User.create(req.body)
+  User.create({...req.body, avatar: req.file.path })
     .then(() => {
       res.redirect('/login');
     })

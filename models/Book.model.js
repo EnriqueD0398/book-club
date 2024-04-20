@@ -5,7 +5,7 @@ const { REQUIRED_FIELD_ERROR } = require('../constants/errorMessages');
 const genres = require('../constants/genres');
 const Author = require('./Author.model');
 
-const bookSchema = (
+const bookSchema = mongoose.Schema(
   {
     title: {
       type: String,
@@ -36,6 +36,13 @@ const bookSchema = (
     // img
   }
 );
+
+bookSchema.virtual('likes', {
+  ref: 'Like',
+  foreignField: 'book',
+  localField: '_id',
+  justOne: false
+})
 
 const Book = mongoose.model('Book', bookSchema);
 

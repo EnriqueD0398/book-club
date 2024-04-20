@@ -17,6 +17,17 @@
       <form action="/books/{{book._id}}/like" method="POST">
         <button class="btn {{#if liked}}btn-danger{{else}}btn-outline-danger{{/if}}">Like</button>
       </form>
+
+      {{#if book.likes}}
+      <p>{{book.likes.length}} usuarios les gusta este libro</p>
+      <div class="d-flex">
+        {{#each book.likes as |like|}}
+          <a href="/users/{{like.user._id}}">
+            <img class="rounded-circle border" src="{{like.user.avatar}}" title="{{like.user.email}}" width="20" />
+          </a>
+        {{/each}}
+      </div>
+      {{/if}}
     </div>
   </div>
 </div>

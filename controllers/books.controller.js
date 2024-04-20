@@ -48,6 +48,7 @@ module.exports.getBooks = (req, res, next) => {
 module.exports.getBook = (req, res, next) => {
   Book.findById(req.params.id)
     .populate('author')
+    .populate({path: 'likes', populate: { path: 'user',  select: 'email avatar' }})
     .then(book => {
       if (!book) {
         next(createError(404, 'Libro no encontrado'))
