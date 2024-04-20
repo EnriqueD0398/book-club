@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/User.model');
+const Like = require('../models/Like.model');
 
 // Devuelve la página de registro
 module.exports.register = (req, res, next) => {
@@ -27,5 +28,13 @@ module.exports.doRegister = (req, res, next) => {
 
 // Perfil del usuario en sesión
 module.exports.getCurrentUserProfile = (req, res, next) => {
-  res.render('profile');
+  console.log(req.currentUser)
+  // Quiero traer los libros que me gustan
+  Like.find({ user: req.currentUser._id })
+    .populate('book')
+    .then(likes => {
+      res.render('profile', { books: likes.map(like => like.book) });
+    }) 
+    .catch(err => next(next))
+
 }

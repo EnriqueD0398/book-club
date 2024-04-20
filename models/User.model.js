@@ -6,6 +6,8 @@ const { REQUIRED_FIELD_ERROR } = require('../constants/errorMessages');
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const SALT_ROUNDS = 10;
 
+const Like = require('./Like.model');
+
 const userSchema = mongoose.Schema(
   {
     username: {
@@ -25,8 +27,20 @@ const userSchema = mongoose.Schema(
       required: [true, REQUIRED_FIELD_ERROR],
       minLength: [8, "Password must be at least 8 characters long"],
     },
+  },
+  {
+    toObject: {
+      virtuals: true,
+    }
   }
 )
+
+userSchema.virtual('likes', {
+  ref: Like.modelName,
+  foreignField: 'user',
+  localField: '_id',
+  justOne: false
+})
 
 userSchema.pre('save', function(next) {
   if (this.isModified('password')) {

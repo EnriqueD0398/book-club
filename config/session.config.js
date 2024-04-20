@@ -24,6 +24,7 @@ module.exports.sessionConfig = expressSession({
 module.exports.getCurrentCurrentUser = (req, res, next) => {
   if (req.session.userId) {
     User.findById(req.session.userId)
+      .populate({ path: 'likes', populate: { path: 'book' } })
       .then(user => {
         req.currentUser = user;
         res.locals.currentUser = user;

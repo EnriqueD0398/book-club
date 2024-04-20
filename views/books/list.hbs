@@ -30,19 +30,7 @@
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       {{#each books as |book|}}
         <div class="col">
-          <div class="card h-100">
-            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{book.title}}</h5>
-              <p class="card-text">{{book.author.name}}</p>
-              <div class="mb-3">
-                {{#each book.genres as |genre|}}
-                  <span class="badge text-bg-secondary me-2">{{genre}}</span>
-                {{/each}}
-              </div>
-              <a class="btn btn-outline-primary" href="/books/{{book._id}}">Ver más detalles</a>
-            </div>
-          </div>
+          {{> bookcard book=book}}
         </div>
       {{/each}}
     </div>
