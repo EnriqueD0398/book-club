@@ -1,6 +1,7 @@
 const createError = require('http-errors')
 
 const Book = require('../models/Book.model');
+const Like = require('../models/Like.model');
 const genresArr = require('../constants/genres');
 const Author = require('../models/Author.model');
 
@@ -51,7 +52,19 @@ module.exports.getBook = (req, res, next) => {
       if (!book) {
         next(createError(404, 'Libro no encontrado'))
       }
-      res.render('books/detail', { book })
+
+      if (req.currentUser) {
+        return Like.findOne({ user: req.currentUser._id, book: req.params.id })
+        .then(like => {
+            if (like) {
+              res.render('books/detail', { book, liked: Boolean(like) })
+            } else {
+              res.render('books/detail', { book })
+            }
+          })
+      } else {
+        res.render('books/detail', { book })
+      }
     })
     .catch(err => next(err))
 }

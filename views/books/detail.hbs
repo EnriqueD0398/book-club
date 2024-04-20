@@ -14,6 +14,9 @@
           <a href="/books?genres={{genre}}" class="badge text-bg-secondary me-2">{{genre}}</a>
         {{/each}}
       </p>
+      <form action="/books/{{book._id}}/like" method="POST">
+        <button class="btn {{#if liked}}btn-danger{{else}}btn-outline-danger{{/if}}">Like</button>
+      </form>
     </div>
   </div>
 </div>

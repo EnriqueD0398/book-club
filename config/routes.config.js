@@ -26,6 +26,6 @@ router.get('/books/:id', booksController.getBook);
 
 // Likes
 
-router.post('/books/:id/like', likesController.doLike);
+router.post('/books/:id/like', authMiddleware.isAuthenticated, likesController.doLike);
 
 module.exports = router;
